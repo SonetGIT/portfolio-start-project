@@ -29,9 +29,9 @@ export const Work = (props:WorkPrsType) => {
 
 
 const StlWork = styled.div`
-    background-color: ${theme.colors.secondaryBg};
-    max-width: 540px;
-    width: 100%;
+    background-color: ${theme.colors.secondaryBg};    
+    width: 330px;
+    flex-grow: 1;
     
     ${Link} {
         padding: 10px 0;
@@ -40,28 +40,16 @@ const StlWork = styled.div`
             margin-left: 20px;
         }
     }
+
+    @media ${theme.media.descTop}{
+        max-width: 540px;
+    }
+    
 `
 
 const StlImageWrapper = styled.div`
     position: relative;  
     
-    &:hover {
-        &::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(4px) //blure
-        }
-
-        ${Btn} {
-            opacity: 1;
-        }
-    }
-
     /*view project*/
     ${Btn} {
         opacity: 0;
@@ -73,6 +61,38 @@ const StlImageWrapper = styled.div`
         &::before {
             width: 100%;
             height: 100%;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(4px); //blure
+        opacity: 0;
+    }
+
+    &:hover {
+        &::before{
+            opacity: 1;
+        }       
+
+        ${Btn} {
+            opacity: 1;
+        }
+    }
+
+    @media ${theme.media.tablet}{
+        &::before{
+            opacity: 1;
+        }       
+
+        ${Btn} {
+            opacity: 1;
         }
     }
 `

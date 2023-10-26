@@ -2,6 +2,7 @@ import React from 'react'; //imr
 import styled from 'styled-components';
 import { Icon } from '../../../../components/icon/Icon';
 import { FlexWrapper } from '../../../../components/FlexWrapper';
+import { theme } from '../../../../styles/Theme';
 
 type SkillPrsType = {
    iconId: string
@@ -23,7 +24,12 @@ export const Skill = (props:SkillPrsType) => {
 
 const StlSkill = styled.div`
     width: 380px;
+    flex-grow: 1;
     padding: 62px 20px 40px;
+
+    @media ${theme.media.mobile} {
+        padding: 62px 0px 40px;
+    }
 
 `
 const SkillTitle = styled.h3`

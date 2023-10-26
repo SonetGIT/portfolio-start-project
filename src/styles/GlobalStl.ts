@@ -7,7 +7,7 @@ export const GlobalStl = createGlobalStyle`
     *::after {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
+        box-sizing: border-box; //обязательный параметр
     }
     body {
     margin: 0;
@@ -39,6 +39,10 @@ export const GlobalStl = createGlobalStyle`
 
     section {
         padding: 100px 0;
+
+        @media ${theme.media.mobile}{
+            padding: 80px 0;
+        }
     }
 
     section:nth-of-type(odd){

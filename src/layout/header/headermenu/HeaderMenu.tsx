@@ -31,6 +31,11 @@ const StlHeaderMenu = styled.nav `
         gap: 30px;
         justify-content: center;
     }
+
+    //адаптивная верстка
+    @media ${theme.media.tablet}{
+        display: none;
+    }
 `
 
 const Mask = styled.span`

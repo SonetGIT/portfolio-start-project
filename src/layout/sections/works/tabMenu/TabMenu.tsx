@@ -18,12 +18,13 @@ export const TabMenu = (props:{menuItmsM:Array<string>}) => {
     );
 };
 
-const StlTabMenu = styled.nav `
-    margin-bottom: 40px;
+const StlTabMenu = styled.nav `    
     ul {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
+        display: flex;        
+        justify-content: space-between;
+        max-width: 352px;
+        width: 100%;
+        margin: 0 auto 40px;
     }
 `
 
