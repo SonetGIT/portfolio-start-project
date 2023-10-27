@@ -4,18 +4,18 @@ import { SectionTitle } from '../../../components/SectionTitle';
 import { Icon } from '../../../components/icon/Icon';
 import { Slider } from '../../../components/slider/Slider';
 import { FlexWrapper } from '../../../components/FlexWrapper';
-import { StlIconWrapper } from '../skills/skill/Skill';
 import { Container } from '../../../components/Container';
+import { Stl } from '../skills/Skills_Stl';
 
-export const Testimony = () => {
+export const Testimony: React.FC = () => {
     return (
         <StlTestimony>
             <Container>
                 <SectionTitle>Testimony</SectionTitle>            
                     <FlexWrapper flexDirection={'column'} alignItems={'center'}>
-                        <StlIconWrapper>
+                        <Stl.IconWrapper>
                             <Icon iconId={'quote'}/>
-                        </StlIconWrapper>
+                        </Stl.IconWrapper>
                         <Slider/>
                     </FlexWrapper>                        
             </Container>
@@ -24,10 +24,10 @@ export const Testimony = () => {
 };
 
 const StlTestimony = styled.section`
-    background-color: #98d3dd;
+    background-color: #aeb9ff;
     min-height: 50vh;
     
-    ${StlIconWrapper}{
-        margin: 40px 0 72px;
+    ${Stl.IconWrapper}{
+        margin: 28px 0 72px;
     }
 `

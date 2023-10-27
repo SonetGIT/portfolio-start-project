@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { SectionTitle } from '../../../components/SectionTitle';
 import { FlexWrapper } from '../../../components/FlexWrapper';
 import { Work } from './work/Work';
@@ -7,34 +6,37 @@ import imgWorks1 from '../../../assets/img/works1.png'
 import imgWorks2 from '../../../assets/img/works2.png'
 import { Container } from '../../../components/Container';
 import { TabMenu } from './tabMenu/TabMenu';
+import { Stl } from './work/Works_Stl';
 
 const menuItemWks = ['All', 'landing page', 'React', 'spa']
-export const Works = () => {
+
+const workData = [
+    {
+        titleType:'Social Network',
+        srcType:imgWorks1,
+        textType:'1Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+    },
+    {
+        titleType:'Timer',
+        srcType:imgWorks2,
+        textType:'1Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+    }
+]
+export const Works: React.FC = () => {
     return (
-        <StlWorks>
+        <Stl.Works>
             <Container>
                 <SectionTitle>My Works</SectionTitle>
-                <TabMenu menuItmsM={menuItemWks}/>
+                <TabMenu menuItems={menuItemWks}/>
                 <FlexWrapper justifyContent={'space-between'} alignItems={'flex-start'} flexWrap={'wrap'}>
-                    <Work 
-                        titleType={'Social Network'}
-                        srcType={imgWorks1}
-                        textType={'1Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.'}/>
-                        
-                    <Work
-                        srcType={imgWorks2}
-                        titleType={'Timer'} 
-                        textType={'1Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim'} />
-
+                    {workData.map((w)=>{
+                       return <Work titleType={w.titleType} 
+                                    srcType={w.srcType} 
+                                    textType={w.textType}/>
+                    })}
                 </FlexWrapper>
             </Container>
-        </StlWorks>
+        </Stl.Works>
     );
 }
-
-const StlWorks = styled.section`
-    ${FlexWrapper}{
-        gap:30px
-    }
-`
 

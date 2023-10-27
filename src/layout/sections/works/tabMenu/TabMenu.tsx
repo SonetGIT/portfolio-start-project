@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from '../../../../components/Link';
 
-export const TabMenu = (props:{menuItmsM:Array<string>}) => {
+export const TabMenu:React.FC<{menuItems:Array<string>}> = (props:{menuItems:Array<string>}) => {
     return (
         <StlTabMenu>
             <ul>
-                {props.menuItmsM.map((item:string, index:number)=>{
+                {props.menuItems.map((item:string, index:number)=>{
                     return (
                         <StlListItem key={index}>
                             <Link href='#'>{item}</Link>

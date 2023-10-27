@@ -3,32 +3,34 @@ import styled from 'styled-components';
 import {Logo} from '../../components/logo/Logo'
 import { Container } from '../../components/Container';
 import { FlexWrapper } from '../../components/FlexWrapper';
-import { HeaderMenu } from './headermenu/HeaderMenu';
-import { MobileMenu } from './mobilemenu/MobileMenu';
 
-const menuItmsH = ["Home", "Skills", "Works", "Testimony", "Contact"]
-export const Header = () => {
+import { MobileMenu } from './headerMenu/mobileMenu/MobileMenu';
+import { Stl } from './Header_Stl';
+import { DesctopMenu } from './headerMenu/desctopMenu/DesctopMenu';
+
+const menuItemsH = ["Home", "Skills", "Works", "Testimony", "Contact"]
+
+export const Header: React.FC = () => {
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const breakpoint = 768;
+
+    React.useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth)
+        window.addEventListener("resize", handleWindowResize);    
+        
+        return () => window.removeEventListener("resize", handleWindowResize);
+      }, []);
     return (
-        <StlHeader>
+        <Stl.Header>
             <Container>
                 <FlexWrapper justifyContent={'space-between'} alignItems={'center'}>
                     <Logo />
-                    <HeaderMenu menuItmsM={menuItmsH}/>
-                    {/* <MobileMenu menuItmsM={menuItmsH}/> */}
+                    
+                    {/* использовали тернарный оператор */}
+                    {width < breakpoint ? <MobileMenu menuItems={menuItemsH}/> : <DesctopMenu menuItems={menuItemsH}/>}
                 </FlexWrapper>
             </Container>
-        </StlHeader>
+        </Stl.Header>
     );
 };
-
-//название должна начинатся с ЗАГЛАВНОЙ буквой
-const StlHeader = styled.header `
-    background: rgba(31, 31, 32, 0.9);
-    padding: 20px 0;
-    position: fixed; //фиксация header, при прокрутки этот часть будет фиксированный
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99999;
-`
 
