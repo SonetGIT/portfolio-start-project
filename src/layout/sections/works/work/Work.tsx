@@ -19,7 +19,8 @@ export const Work: React.FC<WorkPrsType> = (props:WorkPrsType) => {
             <Stl.Description>
                 <Stl.Title>{props.titleType}</Stl.Title>
                 <Stl.Txt>{props.textType}</Stl.Txt>
-                <Link href={'#'}>demo</Link>
+                <Link active
+                      href={'#'}>demo</Link>
                 <Link href={'#'}>code</Link>
             </Stl.Description>
         </Stl.Work>               

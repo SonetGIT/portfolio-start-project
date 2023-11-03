@@ -5,9 +5,11 @@ import { theme } from "../../styles/Theme"
 const Slider = styled.div`
     /* border: 1px solid red; */
     max-width: 500px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    outline: 2px solid red;
 `
 
 const Slide = styled.div`

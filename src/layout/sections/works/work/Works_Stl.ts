@@ -7,6 +7,8 @@ import { Btn } from "../../../../components/Btn"
 
 //стили для Works
 const Works = styled.section`
+    position: relative;
+    
     ${FlexWrapper}{
         gap:30px
     }

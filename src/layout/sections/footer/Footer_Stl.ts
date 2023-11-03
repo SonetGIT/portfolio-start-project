@@ -4,9 +4,10 @@ import { font } from '../../../styles/Common';
 
 
 const Footer = styled.section`
+    position: relative;
+
     background-color: ${theme.colors.primaryBg};
-    padding: 40px 0;
-        
+    padding: 40px 0;        
 `
 
 const Name = styled.span`

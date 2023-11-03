@@ -8,10 +8,12 @@ import { Testimony } from './layout/sections/testimony/Testimony';
 import { Contact } from './layout/sections/contact/Contact';
 import { Slogan } from './layout/sections/slogan/Slogan';
 import { Footer } from './layout/sections/footer/Footer';
+import { Particle } from './components/Particle';
 
 function App() {
     return (
         <div >
+            <Particle/>
             <Header/>
             <Main />
             <Skills />
